@@ -9,15 +9,12 @@ async function CheckUser(email) {
     try {
         const existingUser = await User.findOne({ email: email });
         if (existingUser) {
-            // User with the given email already exists
             return true;
         } else {
-            // User with the given email does not exist
             return false;
         }
     } catch (e) {
         console.log(e);
-        // Handle other errors (e.g., database connection issues)
         return "Server Busy";
     }
 }

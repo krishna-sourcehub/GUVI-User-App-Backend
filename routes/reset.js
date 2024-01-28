@@ -3,7 +3,6 @@ const router = express.Router();
 const signin = require('../controllers/signin');
 const { initiatePasswordReset, verifyOtpAndChangePassword } = signin;
 
-// Route for initiating password reset
 router.post('/password', async (req, res) => {
     try {
         const { email } = req.body;
@@ -22,7 +21,7 @@ router.post('/password', async (req, res) => {
     }
 });
 
-// Route for verifying OTP and changing password
+
 router.post('/verify', async (req, res) => {
     try {
         const { email, enteredOtp, newPassword } = req.body;
