@@ -20,7 +20,7 @@ connectDb(); // Make sure this function is correctly connecting to your MongoDB 
 console.log('hello');
 
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+    res.send('Hello, world!');
 });
 
 
@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${port}`);
 });
