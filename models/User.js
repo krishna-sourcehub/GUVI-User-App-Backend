@@ -39,6 +39,10 @@ const userSchema = new Schema(
             type: String,
             default:true
         },
+        token: {
+            type: String,
+            required: true,
+        },
     },
     {
         collection: "User",
