@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const connectDb = require('./db'); // Ensure this function is correctly connecting to your database
+const connectDb = require('./db'); 
 const signRouter = require('./routes/signin');
 const loginRouter = require('./routes/login');
 const profileRouter = require('./routes/profile');
 const updateRouter = require('./routes/update');
 const resetRoutes = require('./routes/reset');
 const cors = require('cors');
-const path = require('path'); // Import the 'path' module
+const path = require('path'); 
 
 const app = express();
 const port = 4000;
@@ -15,7 +15,7 @@ const port = 4000;
 app.use(express.json());
 app.use(cors({ origin: '*' }));
 
-connectDb(); // Make sure this function is correctly connecting to your MongoDB database
+connectDb(); 
 
 console.log('hello');
 
@@ -34,7 +34,7 @@ app.use('/reset', resetRoutes);
 app.use(express.static(path.join(__dirname, 'build')));
 
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
